@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "atlantis",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ProxymanApp/atlantis.git",
+      "state" : {
+        "revision" : "b60ef22babc5cc8997841b378bb2993229fac9eb",
+        "version" : "1.16.0"
+      }
+    },
+    {
       "identity" : "stream-chat-swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/GetStream/stream-chat-swift",

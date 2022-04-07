@@ -8,6 +8,8 @@
 import SwiftUI
 import StreamChatUI
 import StreamChat
+
+/// Leverage https://proxyman.io along with `Atlantis` to capture websocket traffic
 //import Atlantis
 
 @main
@@ -27,17 +29,16 @@ extension ChatClient {
 }
 
 func callStream() {
+/// Uncomment this line + the import to capture websocket traffic via https://proxyman.io
 //    Atlantis.start()
+
     /// you can grab your API Key from https://getstream.io/dashboard/
-    var config = ChatClientConfig(apiKey: .init("uykdzqamca7z"))
-//    config.baseURL = BaseURL(url: URL(string: "chat-edge-dublin-ce1.stream-io-api.com")!)
+    let config = ChatClientConfig(apiKey: .init("uykdzqamca7z"))
 
+    /// user id
     let userID = "tim"
-    /// you can generate the token for this user from https://getstream.io/chat/docs/ios-swift/token_generator/?language=swift
-//    let token = try! Token(rawValue: "﻿eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWJjIn0._Hm8bRWR6ZiYzqfSCO-Xgq1IuRBe2LtOoVEV-KAecQw")
-//    let token = Token.development(userId: "tim")
-//    let token = try! Token(rawValue: "﻿eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoibWFyY2VsbyJ9.abc")
 
+    /// token
     let token = try! Token(rawValue: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidGltIn0.kKN6tKi0OeLb_yM8yLX9ZcoT02NhPPkNybsPAhrYtek")
     LogConfig.level = .debug
     LogConfig.formatters = [
