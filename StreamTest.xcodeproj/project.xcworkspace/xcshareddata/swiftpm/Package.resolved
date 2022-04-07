@@ -3,10 +3,10 @@
     {
       "identity" : "stream-chat-swift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/GetStream/stream-chat-swift.git",
+      "location" : "https://github.com/GetStream/stream-chat-swift",
       "state" : {
-        "revision" : "c5a6d7b7b9f61e1ad9cc76137e5a39cc24de39c8",
-        "version" : "4.12.0"
+        "branch" : "hotfix/auth_token_invalid_segments",
+        "revision" : "2164c1a23096b61644fbd85e4f620c79e8ff0ffd"
       }
     }
   ],

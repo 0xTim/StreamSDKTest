@@ -8,6 +8,7 @@
 import SwiftUI
 import StreamChatUI
 import StreamChat
+//import Atlantis
 
 @main
 struct StreamTestApp: App {
@@ -24,18 +25,24 @@ struct StreamTestApp: App {
 extension ChatClient {
     static var shared: ChatClient!
 }
- 
-/// you can grab your API Key from https://getstream.io/dashboard/
-let config = ChatClientConfig(apiKey: .init("uykdzqamca7z"))
- 
- 
-let userID = "tim"
- 
-/// you can generate the token for this user from https://getstream.io/chat/docs/ios-swift/token_generator/?language=swift
-let token: Token = "﻿eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidGltIn0.kKN6tKi0OeLb_yM8yLX9ZcoT02NhPPkNybsPAhrYtek"
- 
+
 func callStream() {
+//    Atlantis.start()
+    /// you can grab your API Key from https://getstream.io/dashboard/
+    var config = ChatClientConfig(apiKey: .init("uykdzqamca7z"))
+//    config.baseURL = BaseURL(url: URL(string: "chat-edge-dublin-ce1.stream-io-api.com")!)
+
+    let userID = "tim"
+    /// you can generate the token for this user from https://getstream.io/chat/docs/ios-swift/token_generator/?language=swift
+//    let token = try! Token(rawValue: "﻿eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWJjIn0._Hm8bRWR6ZiYzqfSCO-Xgq1IuRBe2LtOoVEV-KAecQw")
+//    let token = Token.development(userId: "tim")
+//    let token = try! Token(rawValue: "﻿eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoibWFyY2VsbyJ9.abc")
+
+    let token = try! Token(rawValue: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidGltIn0.kKN6tKi0OeLb_yM8yLX9ZcoT02NhPPkNybsPAhrYtek")
     LogConfig.level = .debug
+    LogConfig.formatters = [
+        PrefixLogFormatter(prefixes: [.info: "ℹ️", .debug: "🛠", .warning: "⚠️", .error: "🚨"])
+    ]
     /// create an instance of ChatClient and share it using the singleton
     ChatClient.shared = ChatClient(config: config) { completion in
                 /// This closure will be called when the token is expired
@@ -47,13 +54,14 @@ func callStream() {
      
     /// connect the user using a closure function
     ChatClient.shared.connectUser(
-                userInfo: .init(id: userID),
+        userInfo: .init(id: userID, name: userID),
                 token: token
     ) { error in
       if let error = error {
          print("Connection failed with: \(error)")
       } else {
          // User successfully connected
+         print("Connected")
       }
     }
     
