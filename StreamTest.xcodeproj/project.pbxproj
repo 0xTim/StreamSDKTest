@@ -14,9 +14,10 @@
 		230BCAFD27E9F1A400DE3661 /* StreamTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BCAFC27E9F1A400DE3661 /* StreamTestTests.swift */; };
 		230BCB0727E9F1A400DE3661 /* StreamTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BCB0627E9F1A400DE3661 /* StreamTestUITests.swift */; };
 		230BCB0927E9F1A400DE3661 /* StreamTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BCB0827E9F1A400DE3661 /* StreamTestUITestsLaunchTests.swift */; };
-		A337899827F71EE700AD1B34 /* StreamChat in Frameworks */ = {isa = PBXBuildFile; productRef = A337899727F71EE700AD1B34 /* StreamChat */; };
-		A337899A27F71EE700AD1B34 /* StreamChatUI in Frameworks */ = {isa = PBXBuildFile; productRef = A337899927F71EE700AD1B34 /* StreamChatUI */; };
 		A3867C3227FF11DD007665F4 /* Atlantis in Frameworks */ = {isa = PBXBuildFile; productRef = A3867C3127FF11DD007665F4 /* Atlantis */; };
+		A3B665272800779100AAE21E /* StreamChatSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A3B665262800779100AAE21E /* StreamChatSwiftUI */; };
+		A3B66529280077F500AAE21E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B66528280077F500AAE21E /* AppDelegate.swift */; };
+		A3B6652B2800792700AAE21E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6652A2800792700AAE21E /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		230BCB0627E9F1A400DE3661 /* StreamTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamTestUITests.swift; sourceTree = "<group>"; };
 		230BCB0827E9F1A400DE3661 /* StreamTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A34DB99027FDAF5000C62BC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A3B66528280077F500AAE21E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A3B6652A2800792700AAE21E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,9 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A337899A27F71EE700AD1B34 /* StreamChatUI in Frameworks */,
+				A3B665272800779100AAE21E /* StreamChatSwiftUI in Frameworks */,
 				A3867C3227FF11DD007665F4 /* Atlantis in Frameworks */,
-				A337899827F71EE700AD1B34 /* StreamChat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,8 +105,10 @@
 			isa = PBXGroup;
 			children = (
 				A34DB99027FDAF5000C62BC0 /* Info.plist */,
-				230BCAEB27E9F1A300DE3661 /* StreamTestApp.swift */,
+				A3B66528280077F500AAE21E /* AppDelegate.swift */,
 				230BCAED27E9F1A300DE3661 /* ContentView.swift */,
+				A3B6652A2800792700AAE21E /* SceneDelegate.swift */,
+				230BCAEB27E9F1A300DE3661 /* StreamTestApp.swift */,
 				230BCAEF27E9F1A400DE3661 /* Assets.xcassets */,
 				230BCAF127E9F1A400DE3661 /* Preview Content */,
 			);
@@ -160,9 +164,8 @@
 			);
 			name = StreamTest;
 			packageProductDependencies = (
-				A337899727F71EE700AD1B34 /* StreamChat */,
-				A337899927F71EE700AD1B34 /* StreamChatUI */,
 				A3867C3127FF11DD007665F4 /* Atlantis */,
+				A3B665262800779100AAE21E /* StreamChatSwiftUI */,
 			);
 			productName = StreamTest;
 			productReference = 230BCAE827E9F1A300DE3661 /* StreamTest.app */;
@@ -237,8 +240,8 @@
 			);
 			mainGroup = 230BCADF27E9F1A300DE3661;
 			packageReferences = (
-				A337899627F71EE700AD1B34 /* XCRemoteSwiftPackageReference "stream-chat-swift" */,
 				A3867C3027FF11DD007665F4 /* XCRemoteSwiftPackageReference "atlantis" */,
+				A3B665252800779100AAE21E /* XCRemoteSwiftPackageReference "stream-chat-swiftui" */,
 			);
 			productRefGroup = 230BCAE927E9F1A300DE3661 /* Products */;
 			projectDirPath = "";
@@ -282,8 +285,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3B66529280077F500AAE21E /* AppDelegate.swift in Sources */,
 				230BCAEE27E9F1A300DE3661 /* ContentView.swift in Sources */,
 				230BCAEC27E9F1A300DE3661 /* StreamTestApp.swift in Sources */,
+				A3B6652B2800792700AAE21E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +452,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StreamTest/Info.plist;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Atlantis would use Bonjour Service to discover Proxyman app from your local network.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -479,7 +483,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StreamTest/Info.plist;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Atlantis would use Bonjour Service to discover Proxyman app from your local network.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -616,14 +619,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A337899627F71EE700AD1B34 /* XCRemoteSwiftPackageReference "stream-chat-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/GetStream/stream-chat-swift";
-			requirement = {
-				branch = hotfix/auth_token_invalid_segments;
-				kind = branch;
-			};
-		};
 		A3867C3027FF11DD007665F4 /* XCRemoteSwiftPackageReference "atlantis" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ProxymanApp/atlantis.git";
@@ -632,23 +627,26 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		A3B665252800779100AAE21E /* XCRemoteSwiftPackageReference "stream-chat-swiftui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GetStream/stream-chat-swiftui";
+			requirement = {
+				branch = bugfix/auth_invalid_segments;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A337899727F71EE700AD1B34 /* StreamChat */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A337899627F71EE700AD1B34 /* XCRemoteSwiftPackageReference "stream-chat-swift" */;
-			productName = StreamChat;
-		};
-		A337899927F71EE700AD1B34 /* StreamChatUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A337899627F71EE700AD1B34 /* XCRemoteSwiftPackageReference "stream-chat-swift" */;
-			productName = StreamChatUI;
-		};
 		A3867C3127FF11DD007665F4 /* Atlantis */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A3867C3027FF11DD007665F4 /* XCRemoteSwiftPackageReference "atlantis" */;
 			productName = Atlantis;
+		};
+		A3B665262800779100AAE21E /* StreamChatSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3B665252800779100AAE21E /* XCRemoteSwiftPackageReference "stream-chat-swiftui" */;
+			productName = StreamChatSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
